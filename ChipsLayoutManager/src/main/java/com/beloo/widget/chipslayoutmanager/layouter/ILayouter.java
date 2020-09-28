@@ -1,8 +1,8 @@
 package com.beloo.widget.chipslayoutmanager.layouter;
 
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
-import android.util.Pair;
+import androidx.annotation.Nullable;
+
 import android.view.View;
 
 import java.util.List;

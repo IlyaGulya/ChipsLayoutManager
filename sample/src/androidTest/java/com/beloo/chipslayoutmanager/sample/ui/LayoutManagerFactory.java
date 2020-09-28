@@ -1,9 +1,9 @@
 package com.beloo.chipslayoutmanager.sample.ui;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.beloo.widget.chipslayoutmanager.ChipsLayoutManager;
 

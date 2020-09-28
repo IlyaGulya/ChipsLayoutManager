@@ -1,13 +1,13 @@
 package com.beloo.widget.chipslayoutmanager.util;
 
-import android.support.test.espresso.UiController;
-import android.support.test.espresso.ViewAction;
+import androidx.test.espresso.UiController;
+import androidx.test.espresso.ViewAction;
 import android.view.View;
 
 import org.hamcrest.Matcher;
 
-import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static org.hamcrest.Matchers.allOf;
 
 public abstract class Action<T extends View> implements ViewAction {

@@ -2,9 +2,9 @@ package com.beloo.chipslayoutmanager.sample.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public class ChipsEntity implements Parcelable {
     @DrawableRes

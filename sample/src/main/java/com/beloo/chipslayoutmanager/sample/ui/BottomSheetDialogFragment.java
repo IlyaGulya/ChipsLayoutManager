@@ -1,9 +1,8 @@
 package com.beloo.chipslayoutmanager.sample.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,8 @@ import com.beloo.chipslayoutmanager.sample.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class BottomSheetDialogFragment extends android.support.design.widget.BottomSheetDialogFragment {
+public class BottomSheetDialogFragment extends com.google.android.material.bottomsheet.BottomSheetDialogFragment {
 
-    @BindView(R.id.rvBottomSheet)
     RecyclerView rvBottomSheet;
 
     private IItemsFactory itemsFactory = new ChipsFactory();
@@ -36,6 +34,7 @@ public class BottomSheetDialogFragment extends android.support.design.widget.Bot
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bottom_sheet_modal, container, false);
+        rvBottomSheet = view.findViewById(R.id.rvBottomSheet);
         ButterKnife.bind(this, view);
         return view;
     }

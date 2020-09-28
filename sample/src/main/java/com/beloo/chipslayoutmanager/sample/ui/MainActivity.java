@@ -1,9 +1,9 @@
 package com.beloo.chipslayoutmanager.sample.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.beloo.widget.chipslayoutmanager.BuildConfig;
@@ -20,7 +20,6 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     private Drawer drawer;
@@ -30,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        toolbar = findViewById(R.id.toolbar);
 
         toolbar.setTitle(getString(R.string.app_name_and_version, BuildConfig.VERSION_NAME));
 

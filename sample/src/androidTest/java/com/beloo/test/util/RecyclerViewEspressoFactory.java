@@ -1,10 +1,10 @@
 package com.beloo.test.util;
 
-import android.support.annotation.NonNull;
-import android.support.test.espresso.UiController;
-import android.support.test.espresso.ViewAction;
-import android.support.test.espresso.matcher.BoundedMatcher;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.test.espresso.UiController;
+import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.matcher.BoundedMatcher;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.beloo.widget.chipslayoutmanager.ChildViewsIterable;
@@ -18,9 +18,9 @@ import org.hamcrest.TypeSafeMatcher;
 
 import java.util.Locale;
 
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
-import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
+import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static org.hamcrest.Matchers.allOf;
 
 public abstract class RecyclerViewEspressoFactory {

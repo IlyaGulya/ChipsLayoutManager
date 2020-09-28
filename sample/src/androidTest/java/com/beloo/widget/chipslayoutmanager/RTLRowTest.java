@@ -1,7 +1,7 @@
 package com.beloo.widget.chipslayoutmanager;
 
-import android.support.annotation.UiThread;
-import android.support.v4.view.ViewCompat;
+import androidx.annotation.UiThread;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 
 import com.beloo.chipslayoutmanager.sample.R;

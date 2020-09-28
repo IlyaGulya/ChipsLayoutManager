@@ -1,10 +1,11 @@
 package com.beloo.widget.chipslayoutmanager;
 
-import android.support.test.espresso.ViewAction;
-import android.support.test.espresso.ViewInteraction;
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import android.support.v7.widget.RecyclerView;
+import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.ViewInteraction;
+import androidx.test.rule.ActivityTestRule;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -26,10 +27,10 @@ import org.mockito.MockitoAnnotations;
 import java.util.List;
 import java.util.Locale;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static com.beloo.test.util.RecyclerViewEspressoFactory.actionDelegate;
 import static com.beloo.test.util.RecyclerViewEspressoFactory.notifyItemRemovedAction;
 import static junit.framework.Assert.assertEquals;
@@ -96,7 +97,7 @@ public class FewChipsColumnTest {
     }
 
     /**
-     * test, that {@link android.support.v7.widget.LinearLayoutManager#onLayoutChildren} isn't called infinitely
+     * test, that {@link LinearLayoutManager#onLayoutChildren} isn't called infinitely
      */
     @Test
     public void onLayoutChildren_afterActivityStarted_onLayoutCallLimited() throws Exception {

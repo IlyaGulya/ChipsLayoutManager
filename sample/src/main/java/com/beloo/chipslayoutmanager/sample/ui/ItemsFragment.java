@@ -1,11 +1,10 @@
 package com.beloo.chipslayoutmanager.sample.ui;
 
-
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.RestrictTo;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.annotation.RestrictTo;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +20,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.beloo.chipslayoutmanager.sample.R;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  */
@@ -31,11 +27,8 @@ public class ItemsFragment extends Fragment {
 
     private static final String EXTRA = "data";
 
-    @BindView(R.id.rvTest)
     RecyclerView rvTest;
-    @BindView(R.id.spinnerPosition)
     Spinner spinnerPosition;
-    @BindView(R.id.spinnerMoveTo)
     Spinner spinnerMoveTo;
 
     private RecyclerView.Adapter adapter;
@@ -64,7 +57,16 @@ public class ItemsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_items, container, false);
+        View view = inflater.inflate(R.layout.fragment_items, container, false);
+        rvTest = view.findViewById(R.id.rvTest);
+        spinnerPosition = view.findViewById(R.id.spinnerPosition);
+        spinnerMoveTo = view.findViewById(R.id.spinnerMoveTo);
+        view.findViewById(R.id.btnRevert).setOnClickListener(this::onRevertClicked);
+        view.findViewById(R.id.btnDelete).setOnClickListener(this::onDeleteClicked);
+        view.findViewById(R.id.btnMove).setOnClickListener(this::onMoveClicked);
+        view.findViewById(R.id.btnScroll).setOnClickListener(this::onScrollClicked);
+        view.findViewById(R.id.btnInsert).setOnClickListener(this::onInsertClicked);
+        return view;
     }
 
 
@@ -90,7 +92,6 @@ public class ItemsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
 
         adapter = createAdapter(savedInstanceState);
 
@@ -154,7 +155,6 @@ public class ItemsFragment extends Fragment {
         spinnerMoveTo.setSelection(selectedMoveToPosition);
     }
 
-    @OnClick(R.id.btnRevert)
     public void onRevertClicked(View view) {
         int position = spinnerPosition.getSelectedItemPosition();
         if (position == Spinner.INVALID_POSITION)
@@ -170,7 +170,6 @@ public class ItemsFragment extends Fragment {
         spinnerMoveTo.setSelection(position);
     }
 
-    @OnClick(R.id.btnDelete)
     public void onDeleteClicked(View view) {
         int position = spinnerPosition.getSelectedItemPosition();
         if (position == Spinner.INVALID_POSITION)
@@ -181,7 +180,6 @@ public class ItemsFragment extends Fragment {
         updateSpinners();
     }
 
-    @OnClick(R.id.btnMove)
     public void onMoveClicked(View view) {
         int position = spinnerPosition.getSelectedItemPosition();
         if (position == Spinner.INVALID_POSITION)
@@ -199,13 +197,11 @@ public class ItemsFragment extends Fragment {
         adapter.notifyItemMoved(position, positionMoveTo);
     }
 
-    @OnClick(R.id.btnScroll)
     public void onScrollClicked(View view) {
 //        rvTest.scrollBy(0, 500);
         rvTest.scrollToPosition(spinnerPosition.getSelectedItemPosition());
     }
 
-    @OnClick(R.id.btnInsert)
     public void onInsertClicked(View view) {
         int position = spinnerPosition.getSelectedItemPosition();
         if (position == Spinner.INVALID_POSITION)

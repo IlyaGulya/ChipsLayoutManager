@@ -1,7 +1,7 @@
 package com.beloo.widget.chipslayoutmanager.util;
 
 
-import android.support.test.espresso.UiController;
+import androidx.test.espresso.UiController;
 import android.view.View;
 
 import com.beloo.widget.chipslayoutmanager.support.BiConsumer;

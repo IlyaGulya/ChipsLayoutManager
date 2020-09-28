@@ -1,6 +1,6 @@
 package com.beloo.widget.chipslayoutmanager.util;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
 public class InstrumentalUtil {
     public static void waitForIdle() throws Exception {
